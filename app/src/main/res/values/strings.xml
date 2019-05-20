@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Score Keeper For Words Game</string>
+    <string name="player_one">Player One</string>
+    <string name="player_two">Player Two</string>
+    <string name="player_one_score">0</string>
+    <string name="player_two_score">0</string>
+    <string name="add_10">Unique answer \n+10 Points</string>
+    <string name="add_5">Duplicate answer \n+5 Points</string>
+    <string name="add_10_land">Unique answer +10 Points</string>
+    <string name="add_5_land">Duplicate answer +5 Points</string>
+    <string name="reset">New Game</string>
+</resources>
