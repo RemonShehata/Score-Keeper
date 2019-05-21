@@ -9,8 +9,8 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
-    int scoreForPlayerOne = 0;
-    int scoreForPlayerTwo = 0;
+    int scoreForPlayerOne;
+    int scoreForPlayerTwo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
