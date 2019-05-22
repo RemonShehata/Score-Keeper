@@ -1,11 +1,10 @@
 package com.example.android.scorekeeperforwordsgame;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,8 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
+    }
 
     // Code for player One Buttons
 
@@ -76,13 +75,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /*
-    *This method is triggered when the reset button is touched
-    * resets score for both players to zero
+     *This method is triggered when the reset button is touched
+     * resets score for both players to zero
      */
-    public void resetScore(View view){
+    public void resetScore(View view) {
         scoreForPlayerOne = 0;
         displayPlayerOne(scoreForPlayerOne);
         scoreForPlayerTwo = 0;
         displayPlayerTwo(scoreForPlayerTwo);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putInt("playerOne", scoreForPlayerOne);
+        outState.putInt("playerTwo", scoreForPlayerTwo);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        displayPlayerOne(savedInstanceState.getInt("playerOne"));
+        displayPlayerTwo(savedInstanceState.getInt("playerTwo"));
+
     }
 }
